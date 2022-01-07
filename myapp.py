@@ -17,7 +17,7 @@ import pandas as pd
 
 """Load data"""
 
-df_hdi = pd.read_excel('https://drive.google.com/uc?id=1Kl8yCyR7GUcH-hzwiLbcvRK5hHx-ljcJ')
+df_hdi = pd.read_excel('./data/HDI.xlsx')
 
 """## Data Exploration
 
