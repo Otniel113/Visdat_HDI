@@ -83,6 +83,7 @@ from bokeh.io import curdoc
 from bokeh.models import ColumnDataSource, HoverTool, Select
 from bokeh.models.widgets import Tabs, Panel
 from bokeh.layouts import row, widgetbox
+from bokeh.client import push_session
 
 """Membuat Column Data Source"""
 
@@ -222,3 +223,5 @@ titik_panel = Panel(child=layout2, title='Visualisasi Titik (Scatter)')
 tabs = Tabs(tabs=[garis_panel, titik_panel])
 
 curdoc().add_root(tabs)
+session = push_session(curdoc())
+session.show()
