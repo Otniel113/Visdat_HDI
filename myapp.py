@@ -24,15 +24,15 @@ df_hdi = pd.read_excel('https://drive.google.com/uc?id=1Kl8yCyR7GUcH-hzwiLbcvRK5
 Melihat ukuran dataset
 """
 
-df_hdi.shape
+#df_hdi.shape
 
 """Melihat 5 data teratas"""
 
-df_hdi.head()
+#df_hdi.head()
 
 """Melihat info setiap kolom, terutama melihat missing value"""
 
-df_hdi.info()
+#df_hdi.info()
 
 """## Data Preprocessing
 
@@ -40,20 +40,20 @@ Hanya mengambil data nasional
 """
 
 df_hdi = df_hdi[df_hdi['Level'] == 'National']
-df_hdi.shape
+#df_hdi.shape
 
 df_hdi.drop(columns=['ISO_Code', 'Level', 'GDLCODE', 'Region'], inplace=True)
-df_hdi.head()
+#df_hdi.head()
 
 """Mengganti index menjadi Country"""
 
 df_hdi.set_index('Country', inplace=True)
-df_hdi.head()
+#df_hdi.head()
 
 """Melakukan transpos"""
 
 df_hdi = df_hdi.transpose()
-df_hdi.head()
+#df_hdi.head()
 
 """Mengubah tipe data indeks dari int menjadi str"""
 
@@ -62,16 +62,16 @@ df_hdi.index = df_hdi.index.map(str)
 """Melakukan reset index sehingga Year menjadi kolom baru dan melihat tipe data kolom Year yang baru dibuat tersebut"""
 
 df_hdi = df_hdi.reset_index().rename(columns={'index' : 'Year'})
-df_hdi.dtypes['Year']
+#df_hdi.dtypes['Year']
 
 """Menghilangkan 'Country' dari index"""
 
 df_hdi.columns.name = None
-df_hdi.head()
+#df_hdi.head()
 
 """Melihat info dengan banyak float64 ada 186 dan object sebanyak 1"""
 
-df_hdi.info()
+#df_hdi.info()
 
 """## Visualisasi Bokeh
 
